@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Excel Gradient Tool</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- HEADER -->
+        <header class="hero">
+
+            <div class="logo-box">
+                <span>▦</span>
+            </div>
+
+            <div>
+                <h1>Excel Gradient Tool</h1>
+
+                <p>
+                    Upload an Excel file and apply custom color gradients
+                    to the values you choose.
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- UPLOAD CARD -->
+        <section class="card">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    📄
+                </div>
+
+                <div>
+                    <h2>1. Upload your Excel file</h2>
+
+                    <p>
+                        Select an .xlsx file to get started.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="upload-row">
+
+                <div class="file-display" id="fileList">
+    <div class="empty-file-message">
+        No files selected
+    </div>
+</div>
+
+
+                <label for="excelFile" class="choose-file-button">
+                    Choose File
+                </label>
+
+                <input
+    type="file"
+    id="excelFile"
+    accept=".xlsx"
+    multiple
+    hidden
+>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRADIENT SETTINGS -->
+        <section class="card gradient-card">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    ⚙
+                </div>
+
+                <div>
+                    <h2>2. Gradient Settings</h2>
+
+                    <p>
+                        Add one or more ranges with their low and high thresholds.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <h3>Gradient Rules</h3> 
+            <div class="sheet-selection">
+
+    <div class="field">
+
+        <label for="sheetSelection">
+            Sheets to apply
+        </label>
+
+        <input
+            type="text"
+            id="sheetSelection"
+            placeholder="Example: 1:2, 6:9"
+        >
+
+        <span class="field-hint">
+            Leave blank for all sheets. Example: 1:2, 6:9
+        </span>
+
+    </div>
+
+</div>
+
+
+            <!-- FIRST RULE -->
+            <div class="rule-card first-rule">
+
+                <div class="rule-number">
+                    1
+                </div>
+
+
+                <div class="field">
+
+                    <label for="cellRange">
+                        Cell range
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cellRange"
+                        placeholder="Example: B1:B30"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="lowValue">
+                        Low threshold
+                    </label>
+
+                    <input
+                        type="number"
+                        id="lowValue"
+                        value="6"
+                    >
+
+                </div>
+
+
+                <div class="color-area">
+
+                    <div class="color-labels">
+                        <span>Low</span>
+                        <span>High</span>
+                    </div>
+
+                    <div class="gradient-preview">
+                        <input
+                            type="color"
+                            id="lowColor"
+                            value="#5B8CCB"
+                            title="Choose low color"
+                        >
+
+                        <div class="gradient-line"></div>
+
+                        <input
+                            type="color"
+                            id="highColor"
+                            value="#E05252"
+                            title="Choose high color"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="highValue">
+                        High threshold
+                    </label>
+
+                    <input
+                        type="number"
+                        id="highValue"
+                        value="20"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- NEW RULES WILL APPEAR HERE -->
+            <div id="extraRulesContainer"></div>
+
+
+            <!-- ACTION BUTTONS -->
+            <div class="actions">
+
+                <button
+                    id="addRange"
+                    class="secondary-button"
+                >
+                    + Add another range
+                </button>
+
+
+                <button
+                    id="applyGradient"
+                    class="primary-button"
+                >
+                    Apply Gradient
+                </button>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="info-box">
+
+                <div class="info-icon">
+                    i
+                </div>
+
+                <div>
+                    <p>
+                        Values <strong>below</strong> the low threshold
+                        will use your selected low-color gradient.
+                    </p>
+
+                    <p>
+                        Values <strong>above</strong> the high threshold
+                        will use your selected high-color gradient.
+                    </p>
+
+                    <p>
+                        Values <strong>between</strong> thresholds
+                        will remain unchanged.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

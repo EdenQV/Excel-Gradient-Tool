@@ -1,0 +1,759 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #172033;
+
+    background:
+        radial-gradient(circle at 8% 5%, rgba(77, 151, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 92% 5%, rgba(255, 105, 135, 0.08), transparent 25%),
+        #f7f9fc;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 48px 0 70px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 34px;
+}
+
+.logo-box {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 42px;
+    color: white;
+
+    background: linear-gradient(
+        145deg,
+        #83c5ff,
+        #4c91e8
+    );
+
+    box-shadow:
+        0 8px 20px rgba(46, 117, 210, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.hero h1 {
+    margin: 0 0 8px;
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: -1.2px;
+    color: #152039;
+}
+
+.hero p {
+    margin: 0;
+    font-size: 17px;
+    color: #5f6878;
+}
+
+
+/* =========================
+   MAIN CARDS
+========================= */
+
+.card {
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid #e0e6ef;
+    border-radius: 16px;
+
+    padding: 28px;
+
+    margin-bottom: 26px;
+
+    box-shadow:
+        0 8px 24px rgba(30, 50, 80, 0.06),
+        0 2px 5px rgba(30, 50, 80, 0.03);
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.section-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eaf3ff;
+    color: #1264d8;
+
+    font-size: 22px;
+
+    box-shadow: 0 4px 12px rgba(32, 105, 205, 0.10);
+}
+
+.section-heading h2 {
+    margin: 3px 0 8px;
+
+    color: #1261c9;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #667080;
+    font-size: 15px;
+}
+
+
+/* =========================
+   UPLOAD
+========================= */
+
+.upload-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-left: 64px;
+}
+
+.file-display {
+    min-height: 52px;
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 18px;
+
+    border: 1px solid #d9e0ea;
+    border-radius: 10px;
+
+    background: #fbfcfe;
+
+    color: #263247;
+    font-size: 16px;
+}
+
+.file-icon {
+    font-size: 20px;
+}
+
+.choose-file-button {
+    min-width: 150px;
+    height: 52px;       
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 22px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #1266dc,
+        #1959c9
+    );
+
+    color: white;
+
+    font-weight: 700;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 14px rgba(18, 102, 220, 0.20);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.choose-file-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 8px 18px rgba(18, 102, 220, 0.28);
+}
+
+
+/* =========================
+   GRADIENT SETTINGS
+========================= */
+
+.gradient-card h3 {
+    margin: 8px 0 16px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   RULE CARD
+========================= */
+
+.rule-card,
+.gradient-rule {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        44px
+        minmax(180px, 1.1fr)
+        minmax(150px, 0.9fr)
+        minmax(220px, 1.3fr)
+        minmax(150px, 0.9fr);
+
+    align-items: end;
+
+    gap: 18px;
+
+    padding: 22px 20px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #d9e5f5;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #f9fbff,
+        #f4f8fd
+    );
+}
+
+.rule-number {
+    align-self: center;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #1266d9;
+    color: white;
+
+    font-weight: 800;
+
+    box-shadow: 0 3px 8px rgba(18, 102, 217, 0.2);
+}
+
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #263247;
+}
+
+.field input,
+.gradient-rule input[type="text"],
+.gradient-rule input[type="number"] {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d4dce7;
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 15px;
+    color: #172033;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.field input:focus,
+.gradient-rule input:focus {
+    border-color: #2875df;
+
+    box-shadow:
+        0 0 0 3px rgba(40, 117, 223, 0.10);
+}
+
+
+/* =========================
+   COLOR SELECTORS
+========================= */
+
+.color-area {
+    align-self: center;
+    padding-bottom: 5px;
+}
+
+.color-labels {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.color-labels span:first-child {
+    color: #2768c7;
+}
+
+.color-labels span:last-child {
+    color: #d8464d;
+}
+
+.gradient-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gradient-line {
+    flex: 1;
+    height: 9px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        #5b8ccb,
+        #eaf2fb 42%,
+        #fff 50%,
+        #fdeeee 58%,
+        #e05252
+    );
+}
+
+input[type="color"] {
+    width: 36px;
+    height: 36px;
+
+    padding: 3px;
+
+    border: 1px solid #d4dce7;
+    border-radius: 8px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 18px;
+}
+
+button {
+    font-family: inherit;
+}
+
+.secondary-button {
+    padding: 11px 17px;
+
+    border: 1.5px dashed #2670d4;
+    border-radius: 9px;
+
+    background: white;
+    color: #1761c6;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.secondary-button:hover {
+    background: #f1f7ff;
+    transform: translateY(-1px);
+}
+
+.primary-button {
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #1267dc,
+        #1957c8
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 13px rgba(18, 102, 220, 0.20);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 7px 17px rgba(18, 102, 220, 0.28);
+}
+
+
+/* =========================
+   INFORMATION BOX
+========================= */
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 20px;
+    padding: 17px 20px;
+
+    border: 1px solid #dce6f3;
+    border-radius: 10px;
+
+    background: #f8fbff;
+}
+
+.info-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #1266d9;
+    color: white;
+
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.info-box p {
+    margin: 3px 0;
+
+    color: #485366;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* =========================
+   EXTRA RULES
+========================= */
+
+#extraRulesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .page {
+        width: min(94%, 760px);
+        padding-top: 30px;
+    }
+
+    .rule-card,
+    .gradient-rule {
+        grid-template-columns: 40px 1fr 1fr;
+    }
+
+    .color-area {
+        grid-column: 2 / -1;
+    }
+
+    .upload-row {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .logo-box {
+        width: 58px;
+        height: 58px;
+        font-size: 32px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .upload-row {
+        flex-direction: column;
+    }
+
+    .choose-file-button {
+        min-height: 48px;
+    }
+
+    .rule-card,
+    .gradient-rule {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rule-number {
+        align-self: flex-start;
+    }
+
+    .actions {
+        gap: 12px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
+/* =========================
+   SELECTED FILES
+========================= */
+
+.file-display {
+    flex: 1;
+    min-height: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #d9e0ea;
+    border-radius: 10px;
+
+    background: #fbfcfe;
+}
+
+
+/* Individual Excel file */
+
+.file-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 0;
+    min-height: 64px;
+
+    padding: 10px 36px 10px 12px;
+
+    border: 1px solid #dde5ee;
+    border-radius: 10px;
+
+    background: white;
+
+    box-shadow: 0 2px 6px rgba(30, 50, 80, 0.04);
+}
+
+
+/* Excel-style icon */
+
+.file-icon {
+    width: 36px;
+    height: 42px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #e8f4ec;
+    color: #18864b;
+
+    font-size: 20px;
+}
+
+
+/* Filename */
+
+.file-item-name {
+    min-width: 0;
+    flex: 1;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #263247;
+}
+
+
+/* Green checkmark */
+
+.file-check {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcf7e8;
+    color: #169653;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.empty-file-message {
+    grid-column: 1 / -1;
+
+    color: #7a8493;
+    font-size: 15px;
+
+    padding: 10px;
+}
+/* =========================
+   REMOVE FILE BUTTON
+========================= */
+
+.remove-file {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f2f4f7;
+    color: #7b8492;
+
+    font-size: 18px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.remove-file:hover {
+    background: #ffe8e8;
+    color: #d9363e;
+    transform: scale(1.08);
+}
+/* =========================
+   SHEET SELECTION
+========================= */
+
+.sheet-selection {
+    max-width: 420px;
+    margin-bottom: 20px;
+}
+
+.field-hint {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #7a8493;
+}
